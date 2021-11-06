@@ -10,6 +10,8 @@
 
 let frame = document.createElement("IFRAME");
 
+
+//CSS
 frame.style.visibility = "visible";
 frame.style.width = "25%";
 frame.style.border = "3px solid black";
@@ -20,20 +22,29 @@ frame.style.right = "0";
 frame.style.height = "50%";
 frame.style.background = "#FFFFFF";
 
-frame.id = "ON";
+//SRC
 frame.src = "data:text/html, <html contenteditable>";
+frame.id = "best_np"
 
+//PARENTING
 document.body.appendChild(frame);
 
-$(document).keypress(function(event){
-    var keycode = (event.keyCode ? event.keyCode : event.which);
-    if(keycode == '11'){
-        if (frame.id == "OFF") {
-            frame.id = "ON";
-            frame.setAttribute("style", "visibility: visible; width: 25%; border: 3px solid black; zIndex: 6942069420; position: fixed; bottom: 0; right: 0; height: 50%; background: #FFFFFF");
-        } else if (frame.id == "ON") {
-            frame.id = "OFF";
-            frame.setAttribute("style", "visibility: hidden; width: 25%; border: 3px solid black; zIndex: 6942069420; position: fixed; bottom: 0; right: 0; height: 50%; background: #FFFFFF");
-        }
+//FUNCTIONS
+function hide(elem){
+    elem.setAttribute("style", "visibility: hidden; width: 25%; border: 3px solid black; zIndex: 6942069420; position: fixed; bottom: 0; right: 0; height: 50%; background: #FFFFFF");
+}
+
+function show(elem){
+    elem.setAttribute("style", "visibility: visible; width: 25%; border: 3px solid black; zIndex: 6942069420; position: fixed; bottom: 0; right: 0; height: 50%; background: #FFFFFF");
+}
+
+function toggle() {
+    let elem = $("#best_np")
+    tgl ? hide(elem) : show(elem);
+}
+
+$(document).keypress(function(e) {
+    if (e.which == 192 && !$(':focus').length) {
+        toggle();
     }
 });
