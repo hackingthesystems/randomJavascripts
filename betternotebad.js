@@ -44,7 +44,7 @@ function toggle() {
 }
 
 $(document).keypress(function(e) {
-    if (e.which == 192 && !$(':focus').length) {
+    if (e.which == 192) {
         toggle();
     }
 });
