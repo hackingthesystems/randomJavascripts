@@ -10,6 +10,7 @@
 
 let frame = document.createElement("IFRAME");
 
+var open = false;
 
 //CSS
 frame.style.visibility = "visible";
@@ -30,21 +31,24 @@ frame.id = "best_np"
 document.body.appendChild(frame);
 
 //FUNCTIONS
-function hide(elem){
-    elem.setAttribute("style", "visibility: hidden; width: 25%; border: 3px solid black; zIndex: 6942069420; position: fixed; bottom: 0; right: 0; height: 50%; background: #FFFFFF");
+function hide(){
+    frame.setAttribute("style", "visibility: hidden; width: 25%; border: 3px solid black; zIndex: 6942069420; position: fixed; bottom: 0; right: 0; height: 50%; background: #FFFFFF");
+    open = false;
 }
 
-function show(elem){
-    elem.setAttribute("style", "visibility: visible; width: 25%; border: 3px solid black; zIndex: 6942069420; position: fixed; bottom: 0; right: 0; height: 50%; background: #FFFFFF");
+function show(){
+    frame.setAttribute("style", "visibility: visible; width: 25%; border: 3px solid black; zIndex: 6942069420; position: fixed; bottom: 0; right: 0; height: 50%; background: #FFFFFF");
+    open = true;
 }
 
 function toggle() {
-    let elem = $("#best_np")
-    tgl ? hide(elem) : show(elem);
+    open ? hide() : show();
 }
 
-$(document).keypress(function(e) {
-    if (e.which == 192) {
-        toggle();
+window.addEventListener("keydown", checkKeyPressed, false);
+
+function checkKeyPressed(evt) {
+    if (evt.keyCode == "192") {
+        toggle()
     }
-});
+}
