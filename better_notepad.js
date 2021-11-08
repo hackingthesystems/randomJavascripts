@@ -37,7 +37,7 @@ function hide() {
 }
 
 function show() {
-	("#best_np").show()
+	$("#best_np").show()
 	open = true;
 }
 
