@@ -32,12 +32,12 @@ document.body.appendChild(frame);
 
 //FUNCTIONS
 function hide() {
-	$("#best_np").css("visibility", "hidden")
+	$("#best_np").hide()
 	open = false;
 }
 
 function show() {
-	("#best_np").css("visibility", "visible")
+	("#best_np").show()
 	open = true;
 }
 
