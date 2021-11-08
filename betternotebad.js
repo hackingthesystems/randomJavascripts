@@ -44,6 +44,7 @@ function toggle() {
     open ? hide() : show();
 }
 
+//ON-KEY-CLICK
 window.addEventListener("keydown", checkKeyPressed, false);
 
 function checkKeyPressed(evt) {
