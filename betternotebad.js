@@ -16,7 +16,7 @@ var open = false;
 frame.style.visibility = "visible";
 frame.style.width = "25%";
 frame.style.border = "3px solid black";
-frame.style.zIndex = "2147483646";
+frame.style.zIndex = "6942069420";
 frame.style.position = "fixed";
 frame.style.bottom = "0";
 frame.style.right = "0";
@@ -32,12 +32,12 @@ document.body.appendChild(frame);
 
 //FUNCTIONS
 function hide(){
-    frame.setAttribute("style", "visibility: hidden; width: 25%; border: 3px solid black; zIndex: "2147483646"; position: fixed; bottom: 0; right: 0; height: 50%; background: #FFFFFF");
+    frame.setAttribute("style", "visibility: hidden; width: 25%; border: 3px solid black; zIndex: 6942069420; position: fixed; bottom: 0; right: 0; height: 50%; background: #FFFFFF");
     open = false;
 }
 
 function show(){
-    frame.setAttribute("style", "visibility: visible; width: 25%; border: 3px solid black; zIndex: "2147483646"; position: fixed; bottom: 0; right: 0; height: 50%; background: #FFFFFF");
+    frame.setAttribute("style", "visibility: visible; width: 25%; border: 3px solid black; zIndex: 6942069420; position: fixed; bottom: 0; right: 0; height: 50%; background: #FFFFFF");
     open = true;
 }
 
