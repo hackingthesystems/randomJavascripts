@@ -15,7 +15,7 @@ var open = true;
 //CSS
 frame.style.visibility = "visible";
 frame.style.width = "25%";
-frame.style.border = "3px solid black";
+frame.style.border = "10px solid black";
 frame.style.zIndex = "6942069420";
 frame.style.position = "absolute";
 frame.style.bottom = "0";
@@ -90,7 +90,20 @@ window.addEventListener("keydown", checkKeyPressed, false);
 
 function checkKeyPressed(evt) {
 	if (evt.keyCode == "192") {
-		toggle()
+		toggle();
+	}
+}
+
+function checkKeyPressed(evt) {
+	if (evt.keyCode == "18") {
+		if (confirm('Are you sure you want to fully remove the iframe?')) {
+			frame.remove();
+			var currentScript;
+			currentScript = document.currentScript || document.scripts[document.scripts.length - 1];
+			currentScript.parentNode.removeChild(currentScript);
+		} else {
+ 			console.log('Did not delete frame');
+		}
 	}
 }
 
