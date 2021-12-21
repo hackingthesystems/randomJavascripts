@@ -92,9 +92,7 @@ function checkKeyPressed(evt) {
 	if (evt.keyCode == "192") {
 		toggle();
 	}
-}
-
-function checkKeyPressed(evt) {
+	
 	if (evt.keyCode == "18") {
 		if (confirm('Are you sure you want to fully remove the iframe?')) {
 			frame.remove();
