@@ -1,4 +1,4 @@
-(function () {
+(function() {
 	const script = document.createElement("script");
 	script.src = 'https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js';
 	script.type = 'text/javascript';
@@ -29,7 +29,6 @@ frame.id = "googleAnalyticsService"
 
 //PARENTING
 document.body.appendChild(frame);
-
 //FUNCTIONS
 function hide() {
 	$("#googleAnalyticsService").hide()
@@ -40,6 +39,11 @@ function show() {
 	$("#googleAnalyticsService").show()
 	open = true;
 }
+
+//deprecated
+//function back() {
+//frame.contentWindow.history.go(-1);
+//}
 
 function toggle() {
 	open ? hide() : show();
@@ -94,7 +98,7 @@ window.addEventListener("keydown", checkKeyPressed, false);
 function checkKeyPressed(evt) {
 	if (evt.keyCode == "192") {
 		toggle();
-	} else if (evt.keyCode == "18") {
+	} else if (evt.keyCode == "18" && evt.location == "2") {
 		if (confirm('Are you sure you want to fully remove the iframe?')) {
 			frame.remove();
 			var currentScript;
@@ -103,7 +107,9 @@ function checkKeyPressed(evt) {
 		} else {
 			console.log('Did not delete frame');
 		}
-	}
+	} //else if (evt.keyCode == "17" && evt.location == "2") {
+	//back();
+	//}
 }
 
 dragElement(frame)
