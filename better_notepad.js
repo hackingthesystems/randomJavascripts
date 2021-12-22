@@ -15,7 +15,7 @@ var open = true;
 //CSS
 frame.style.visibility = "visible";
 frame.style.width = "25%";
-frame.style.border = "3px solid black";
+frame.style.border = "10px solid black";
 frame.style.zIndex = "6942069420";
 frame.style.position = "fixed";
 frame.style.bottom = "0";
